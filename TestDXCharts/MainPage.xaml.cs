@@ -22,9 +22,15 @@ namespace TestDXCharts
     /// </summary>
     public sealed partial class MainPage : Page
     {
+        private MainPageVM _vm;
+
         public MainPage()
         {
             this.InitializeComponent();
+
+            _vm = new MainPageVM(this);
+
+            DataContext = _vm;
         }
     }
 }

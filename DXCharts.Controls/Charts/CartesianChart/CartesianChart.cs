@@ -12,10 +12,12 @@
 
 namespace DXCharts.Controls.Charts
 {
+    using System;
     using ChartElements.Interfaces;
     using Classes;
     using Windows.Foundation;
     using Windows.UI.Xaml;
+    using System.Collections.Specialized;
 
     public sealed class CartesianChart : ChartBase
     {
@@ -53,7 +55,33 @@ namespace DXCharts.Controls.Charts
             DependencyProperty.Register(nameof(DataOrigin), typeof(Point), typeof(CartesianChart), new PropertyMetadata(new Point(0, 0), OnPropertyChangedStatic));
 
 
-        public CartesianChart() : base() { }
+
+
+        public bool NeedToRedraw
+        {
+            get { return (bool)GetValue(NeedToRedrawProperty); }
+            set { SetValue(NeedToRedrawProperty, value); }
+        }
+
+        // Using a DependencyProperty as the backing store for NeedToRedraw.  This enables animation, styling, binding, etc...
+        public static readonly DependencyProperty NeedToRedrawProperty =
+            DependencyProperty.Register("NeedToRedraw", typeof(bool), typeof(CartesianChart), new PropertyMetadata(false, OnNeedToRedrawChanged));
+
+        public event NotifyCollectionChangedEventHandler NeedToRedrawPropertyChanged;
+
+        private static void OnNeedToRedrawChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            if ((bool)(e.NewValue) == true)
+            {
+                (d as CartesianChart)?.NeedToRedrawPropertyChanged?.Invoke(null, null);
+                d.SetValue(NeedToRedrawProperty, false);
+            }
+        }
+
+        public CartesianChart() : base()
+        {
+            NeedToRedrawPropertyChanged += DataPresenter_CollectionChanged;
+        }
 
 
         public override void CreateAxes()

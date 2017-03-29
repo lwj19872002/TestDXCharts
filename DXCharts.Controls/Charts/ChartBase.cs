@@ -87,6 +87,11 @@ namespace DXCharts.Controls.Charts
             rootCanvas?.Invalidate();
         }
 
+        public void Invalidate()
+        {
+            rootCanvas?.Invalidate();
+        }
+
         private void RootCanvas_CreateResources(CanvasControl sender, Microsoft.Graphics.Canvas.UI.CanvasCreateResourcesEventArgs args)
         {
             // not used for now
