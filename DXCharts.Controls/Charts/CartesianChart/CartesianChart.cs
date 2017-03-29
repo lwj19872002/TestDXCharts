@@ -86,10 +86,18 @@ namespace DXCharts.Controls.Charts
 
         public override void CreateAxes()
         {
-            AxesCollection.Add(HorizontalAxis);
-            AxesCollection.Add(VerticalAxis);
-            HorizontalAxis.DataOrigin = DataOrigin.X;
-            VerticalAxis.DataOrigin = DataOrigin.Y;
+            if (HorizontalAxis != null)
+            {
+                AxesCollection.Add(HorizontalAxis);
+                HorizontalAxis.DataOrigin = DataOrigin.X;
+            }
+
+            if (VerticalAxis != null)
+            {
+                AxesCollection.Add(VerticalAxis);
+                VerticalAxis.DataOrigin = DataOrigin.Y;
+            }
+
         }
 
         public override void PrepareDataPresenter()

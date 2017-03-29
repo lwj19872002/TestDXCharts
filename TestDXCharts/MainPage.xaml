@@ -33,11 +33,12 @@
             <RowDefinition Height="1*"/>
             <RowDefinition Height="1*"/>
         </Grid.RowDefinitions>
-        <charts:CartesianChart Grid.Row="0" DataOrigin="0,0" VisibleRange="{Binding C1DataRange, Mode=TwoWay}"
+        <charts:CartesianChart Grid.Row="0" DataOrigin="10,0" VisibleRange="{Binding C1DataRange, Mode=TwoWay}"
                                DataPresenter="{Binding C1DataPre, Mode=TwoWay}"
-                               NeedToRedraw="{Binding BNeedToRedraw, Mode=TwoWay}">
+                               NeedToRedraw="{Binding BNeedToRedraw, Mode=TwoWay}"
+                               Margin="2">
             <charts:CartesianChart.HorizontalAxis>
-                <chartsprim:StandardAxis Color="Green" TickIncrement="2">
+                <chartsprim:StandardAxis Color="Green" TickIncrement="20">
                     <chartsprim:StandardAxis.ArrowHead>
                         <chartsprim:LineArrowHead Color="Blue" Thickness="1"/>
                     </chartsprim:StandardAxis.ArrowHead>
@@ -47,7 +48,7 @@
                 </chartsprim:StandardAxis>
             </charts:CartesianChart.HorizontalAxis>
             <charts:CartesianChart.VerticalAxis>
-                <chartsprim:StandardAxis Color="Green" TickIncrement="2">
+                <chartsprim:StandardAxis Color="Green" TickIncrement="10">
                     <chartsprim:StandardAxis.ArrowHead>
                         <chartsprim:LineArrowHead Color="Blue" Thickness="1"/>
                     </chartsprim:StandardAxis.ArrowHead>
@@ -57,11 +58,13 @@
                 </chartsprim:StandardAxis>
             </charts:CartesianChart.VerticalAxis>
         </charts:CartesianChart>
-        <charts:CartesianChart Grid.Row="1" DataOrigin="0,0" VisibleRange="{Binding C1DataRange, Mode=TwoWay}"
-                               DataPresenter="{Binding C1DataPre, Mode=TwoWay}"
-                               NeedToRedraw="{Binding BNeedToRedraw, Mode=TwoWay}">
-            <charts:CartesianChart.HorizontalAxis>
-                <chartsprim:StandardAxis Color="Green" TickIncrement="2">
+        <Border Grid.Row="1" BorderBrush="Blue" BorderThickness="2" Margin="2">
+            <charts:CartesianChart DataOrigin="10,0" VisibleRange="{Binding C1DataRange, Mode=TwoWay}"
+                                   DataPresenter="{Binding C1DataPre, Mode=TwoWay}"
+                                   NeedToRedraw="{Binding BNeedToRedraw, Mode=TwoWay}"
+                                   Margin="2">
+                <!--<charts:CartesianChart.HorizontalAxis>
+                <chartsprim:StandardAxis Color="Green" TickIncrement="20">
                     <chartsprim:StandardAxis.ArrowHead>
                         <chartsprim:LineArrowHead Color="Blue" Thickness="1"/>
                     </chartsprim:StandardAxis.ArrowHead>
@@ -69,18 +72,19 @@
                         <chartsprim:StandardTick Color="Black" Thickness="1" Angle="0"/>
                     </chartsprim:StandardAxis.Tick>
                 </chartsprim:StandardAxis>
-            </charts:CartesianChart.HorizontalAxis>
-            <charts:CartesianChart.VerticalAxis>
-                <chartsprim:StandardAxis Color="Green" TickIncrement="2">
-                    <chartsprim:StandardAxis.ArrowHead>
+            </charts:CartesianChart.HorizontalAxis>-->
+                <charts:CartesianChart.VerticalAxis>
+                    <chartsprim:StandardAxis Color="Green" TickIncrement="10">
+                        <!--<chartsprim:StandardAxis.ArrowHead>
                         <chartsprim:LineArrowHead Color="Blue" Thickness="1"/>
-                    </chartsprim:StandardAxis.ArrowHead>
-                    <chartsprim:StandardAxis.Tick>
-                        <chartsprim:StandardTick Color="Black" Thickness="1" Angle="1.57"/>
-                    </chartsprim:StandardAxis.Tick>
-                </chartsprim:StandardAxis>
-            </charts:CartesianChart.VerticalAxis>
-        </charts:CartesianChart>
+                    </chartsprim:StandardAxis.ArrowHead>-->
+                        <chartsprim:StandardAxis.Tick>
+                            <chartsprim:StandardTick Color="Black" Thickness="1" Angle="1.57"/>
+                        </chartsprim:StandardAxis.Tick>
+                    </chartsprim:StandardAxis>
+                </charts:CartesianChart.VerticalAxis>
+            </charts:CartesianChart>
+        </Border>
         <charts:CartesianChart Grid.Row="2" DataOrigin="0,0" VisibleRange="{Binding C1DataRange, Mode=TwoWay}"
                                DataPresenter="{Binding C1DataPre, Mode=TwoWay}"
                                NeedToRedraw="{Binding BNeedToRedraw, Mode=TwoWay}">
@@ -129,7 +133,7 @@
                 </chartsprim:StandardAxis>
             </charts:CartesianChart.VerticalAxis>
         </charts:CartesianChart>
-        <charts:CartesianChart Grid.Row="4" DataOrigin="0,0" VisibleRange="{Binding C1DataRange, Mode=TwoWay}"
+        <!--<charts:CartesianChart Grid.Row="4" DataOrigin="0,0" VisibleRange="{Binding C1DataRange, Mode=TwoWay}"
                                DataPresenter="{Binding C1DataPre, Mode=TwoWay}"
                                NeedToRedraw="{Binding BNeedToRedraw, Mode=TwoWay}">
             <charts:CartesianChart.HorizontalAxis>
@@ -176,6 +180,6 @@
                     </chartsprim:StandardAxis.Tick>
                 </chartsprim:StandardAxis>
             </charts:CartesianChart.VerticalAxis>
-        </charts:CartesianChart>
+        </charts:CartesianChart>-->
     </Grid>
 </Page>
