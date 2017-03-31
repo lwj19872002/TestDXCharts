@@ -32,6 +32,7 @@
             <RowDefinition Height="1*"/>
             <RowDefinition Height="1*"/>
             <RowDefinition Height="1*"/>
+            <RowDefinition Height="50"/>
         </Grid.RowDefinitions>
         <charts:CartesianChart Grid.Row="0" DataOrigin="10,0" VisibleRange="{Binding C1DataRange, Mode=TwoWay}"
                                DataPresenter="{Binding C1DataPre, Mode=TwoWay}"
@@ -181,5 +182,9 @@
                 </chartsprim:StandardAxis>
             </charts:CartesianChart.VerticalAxis>
         </charts:CartesianChart>-->
+
+        <StackPanel Grid.Row="6">
+            <Button x:Name="btnClickMe" Content="Click Me" Click="btnClickMe_Click"/>
+        </StackPanel>
     </Grid>
 </Page>

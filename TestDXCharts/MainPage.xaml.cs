@@ -32,5 +32,20 @@ namespace TestDXCharts
 
             DataContext = _vm;
         }
+
+        private async void btnClickMe_Click(object sender, RoutedEventArgs e)
+        {
+            ConfigPage page = new ConfigPage();
+
+            ContentDialog ctrl = new ContentDialog()
+            {
+                Content = page,
+                PrimaryButtonText = "Yes",
+                SecondaryButtonText = "No",
+                FullSizeDesired = false,
+            };
+
+            await ctrl.ShowAsync();
+        }
     }
 }
