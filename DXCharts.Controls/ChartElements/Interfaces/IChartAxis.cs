@@ -10,17 +10,25 @@
 // THE CODE OR THE USE OR OTHER DEALINGS IN THE CODE.
 // ******************************************************************
 
+using DXCharts.Controls.Classes;
+
 namespace DXCharts.Controls.ChartElements.Interfaces
 {
+
     /// <summary>
     /// The interface of axis element
     /// </summary>
     public interface IChartAxis : IChartLineElement
     {
         /// <summary>
-        /// Pixels per data
+        /// Pixels per data X
         /// </summary>
-        double DataRatio { get; set; }
+        double DataXRatio { get; set; }
+
+        /// <summary>
+        /// Pixels per data Y
+        /// </summary>
+        double DataYRatio { get; set; }
 
         /// <summary>
         /// Orgin of data
@@ -32,5 +40,14 @@ namespace DXCharts.Controls.ChartElements.Interfaces
         /// </summary>
         float OriginPoint { get; set; }
 
+        /// <summary>
+        /// 网格坐标或者分层坐标最大位置，起始默认从0开始
+        /// </summary>
+        float MaxLine { get; set; }
+
+        /// <summary>
+        /// 知道控件的显示范围，用于绘制坐标
+        /// </summary>
+        DataRange VisibleRange { get; set; }
     }
 }

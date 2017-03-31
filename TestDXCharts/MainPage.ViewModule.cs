@@ -114,7 +114,7 @@ namespace TestDXCharts
 
             for (int i = 0; i < 200; i++)
             {
-                double y = Math.Sin((i / 200.0) * 2.0 * Math.PI) * 10.0;
+                double y = Math.Sin((i / 200.0) * 2.0 * Math.PI) * 20.0;
                 _dataSrc.Add(new Point(i, y));
             }
 
@@ -152,7 +152,7 @@ namespace TestDXCharts
                     _dataSrc[i] = p;
                 }
 
-                double y = Math.Sin((_dataFlag / 50.0) * 2.0 * Math.PI) * 10.0;
+                double y = Math.Sin((_dataFlag / 50.0) * 2.0 * Math.PI) * 20.0;
                 Point pp = _dataSrc[199];
                 pp.Y = y;
                 _dataSrc[199] = pp;
@@ -169,7 +169,7 @@ namespace TestDXCharts
         {
             await _wnd.Dispatcher.RunAsync(Windows.UI.Core.CoreDispatcherPriority.Normal, () =>
             {
-                BNeedToRedraw = true;
+                //BNeedToRedraw = true;
                 //_linePre.Data = C1Points;
                 //C1Points = _dataSrc.ToList();
                 //(data as MainPageVM).RaisePropertyChanged("C1Points");

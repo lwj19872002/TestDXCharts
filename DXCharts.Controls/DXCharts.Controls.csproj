@@ -110,6 +110,7 @@
     <Compile Include="ChartElements\Interfaces\IChartDataPresenter.cs" />
     <Compile Include="ChartElements\Interfaces\IChartAxis.cs" />
     <Compile Include="ChartElements\Primitives\ArrowHeads\LineArrowHead.cs" />
+    <Compile Include="ChartElements\Primitives\Axes\LayeringAxis.cs" />
     <Compile Include="ChartElements\Primitives\Axes\StandardAxis.cs" />
     <Compile Include="ChartElements\Interfaces\IChartLineElement.cs" />
     <Compile Include="ChartElements\Interfaces\IChartPointElement.cs" />
